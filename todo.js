@@ -19,6 +19,9 @@ while (input !== "quit" && input !== "q") {
         } else {
             console.log("Index inválido");
         }
+    } else if (input === "editar") {
+        let inputEditado = todos.replace(input, inputEditado);
+        console.log(`${input} editado para ${inputEditado}`)
     }
     input = prompt("O que você gostaria de fazer?");
 } console.log("Até logo!")
