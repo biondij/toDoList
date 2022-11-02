@@ -2,7 +2,7 @@ let input = prompt("Qual comando você gostaria de utilizar?");
 const todos = ["Passar aspirador no quarto", "Preparar o almoço"];
 
 while (input !== "quit" && input !== "q") {
-    if (input === "list") {
+    if (input === "listar") {
         console.log("*******************");
         for (let i = 0; i < todos.length; i++) {
             console.log(`${i}: ${todos[i]}`) // possível fazer com for each
@@ -28,7 +28,7 @@ while (input !== "quit" && input !== "q") {
             todos.push(inputEditado);
         }
         replace();
-        console.log(`${input} editado para ${inputEditado}`)
+        console.log(`${indexEditado} editado para ${inputEditado}`)
     }
     input = prompt("O que você gostaria de fazer?");
 } console.log("Até logo!")
