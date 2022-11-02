@@ -1,5 +1,6 @@
-let input = prompt("O que você gostaria de fazer?");
+let input = prompt("Qual comando você gostaria de utilizar?");
 const todos = ["Passar aspirador no quarto", "Preparar o almoço"];
+
 while (input !== "quit" && input !== "q") {
     if (input === "list") {
         console.log("*******************");
@@ -7,21 +8,28 @@ while (input !== "quit" && input !== "q") {
             console.log(`${i}: ${todos[i]}`) // possível fazer com for each
         }
         console.log("*******************");
-    } else if (input === "new") {
+    } else if (input === "+") {
         const newTodo = prompt("Qual afazer você deseja adicionar?");
         todos.push(newTodo);
         console.log(`${newTodo} adicionado aos afazeres`);
-    } else if (input === "delete") {
+    } else if (input === "-") {
         const index = parseInt(prompt("Digite o index do afazer que você deseja deletar"));
-        if (!Number.isNaN) {
+        if (!Number.isNaN(index)) {
             const deleted = todos.splice(index, 1);
             console.log(`${deleted[0]} deletado dos afazeres`);
         } else {
             console.log("Index inválido");
         }
     } else if (input === "editar") {
-        let inputEditado = todos.replace(input, inputEditado);
+        let indexEditado = prompt("Qual index você deseja editar?");
+        let inputEditado = prompt("Digite seu novo afazer");
+        function replace() {
+            indexEditado = todos.splice(indexEditado, 1);
+            todos.push(inputEditado);
+        }
+        replace();
         console.log(`${input} editado para ${inputEditado}`)
     }
     input = prompt("O que você gostaria de fazer?");
 } console.log("Até logo!")
+
